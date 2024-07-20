@@ -1,9 +1,7 @@
 // .storybook/preview.ts
 
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
-import { theme } from '../src/themes';
-import { Preview } from '@storybook/react';
-import * as NextImage from 'next/image'
+import { createGlobalStyle } from "styled-components";
+import * as NextImage from "next/image";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -34,30 +32,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-//テーマの適用
-const withThemeProvider = (Story) => (
-  <ThemeProvider theme={theme}>
-    <GlobalStyle />
-    <Story />
-  </ThemeProvider>
-);
-
-//next/imageの差し替え
-const OriginalNextImage = NextImage.default;
-
-Object.defineProperty(NextImage, 'default',{
+Object.defineProperty(NextImage, "__esModule", {
   configurable: true,
-  value: (props) => typeof props.src === 'string' ? (
-    <OriginalNextImage {...props} unoptimized blurDataURL={props.src} />
-    : (
-      <OriginalNextImage {...props} unoptimized />
-    )
-  )
-})
-
-Object.defineProperty(NextImage, '__esModule',{
-  configurable:true,
-  value: true
-})
-
-export const decorators: Preview['decorators'] = [withThemeProvider];
+  value: true,
+});
