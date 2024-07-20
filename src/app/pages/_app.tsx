@@ -36,7 +36,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <meta property="og:type" content="website" />
       </Head>
       <GlobalStyle />
-      <Component />
+      <Component {...pageProps} />
     </>
   );
 };
