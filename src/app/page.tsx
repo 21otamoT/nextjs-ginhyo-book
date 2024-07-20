@@ -1,21 +1,9 @@
 import Image from "next/image";
 import { ThemeProvider } from "styled-components";
-import colors from "../../src/themes/colors";
-import fontSizes from "../../src/themes/fontSizes";
-import letterSpacings from "../../src/themes/letterSpacings";
-import lineHeights from "../../src/themes/lineHeights";
-import space from "../../src/themes/space";
 import styles from "./page.module.css";
+import { theme } from "@/themes/themes";
 
 export default function Home() {
-  const theme = {
-    colors,
-    fontSizes,
-    letterSpacings,
-    lineHeights,
-    space,
-  };
-
   return (
     <ThemeProvider theme={theme}>
       <main className={styles.main}>
