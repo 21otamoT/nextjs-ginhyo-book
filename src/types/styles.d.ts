@@ -1,3 +1,12 @@
+import "styled-components";
+import { theme } from "@/themes"; // themeのパスを正しく指定
+
+type Theme = typeof theme;
+
+declare module "styled-components" {
+  export interface DefaultTheme extends Theme {}
+}
+
 /**
  * TはCSSプロパティの値の型
  */
@@ -99,6 +108,11 @@ export type CSSPropertyAlignSelf =
 
 //Grid
 type GridLine = "auto" | (string & {});
+
+export type CSSPropertyGridColumn =
+  | CSSPropertyGlobals
+  | GridLine
+  | (string & {});
 
 export type CSSPropertyGridRow = CSSPropertyGlobals | GridLine | (string & {});
 

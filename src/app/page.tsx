@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { ThemeProvider } from "styled-components";
 import styles from "./page.module.css";
-import { theme } from "@/themes/themes";
+import { theme } from "@/themes";
 
 export default function Home() {
   return (
