@@ -2,8 +2,9 @@ import { Meta, StoryFn } from "@storybook/react";
 import Button from ".";
 
 // eslint-disable-next-line storybook/story-exports
-export default {
+const meta: Meta<typeof Button> = {
   title: "Atoms/Button",
+  component: Button,
   argTypes: {
     variant: {
       options: ["primary", "secondary"],
@@ -23,7 +24,7 @@ export default {
         type: { summary: "string" },
       },
     },
-    desabled: {
+    disabled: {
       control: { type: "boolean" },
       defaultValue: false,
       description: "Disabledフラグ",
@@ -52,7 +53,9 @@ export default {
       },
     },
   },
-} as Meta<typeof Button>;
+};
+
+export default meta;
 
 const Template: StoryFn<typeof Button> = (args) => <Button {...args} />;
 

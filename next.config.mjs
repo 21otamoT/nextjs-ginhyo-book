@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStricMode: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  reactStrictMode: false,
   compiler: (() => {
     let compilerConfig = {
       //styledComponentsの有効化

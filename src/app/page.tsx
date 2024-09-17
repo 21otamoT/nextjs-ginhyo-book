@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import { ThemeProvider } from "styled-components";
 import styles from "./page.module.css";
